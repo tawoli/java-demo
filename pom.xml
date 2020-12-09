@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.4.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <modules>
+        <module>demo-service</module>
+        <module>demo-api</module>
+        <module>demo-java</module>
+    </modules>
+
+    <!-- 域名反写 : com.zhuyupeng.myapp + 服务名 -->
+    <!-- 多单词 , -分割 -->
+    <!-- 继承 -->
+    <groupId>com.zhuyupeng.demo</groupId>
+    <!-- 服务名 + parent -->
+    <artifactId>demo-aggregator</artifactId>
+    <!-- 继承 -->
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <!-- artifactId去连字符 , 首字母大写 -->
+    <name>Demo Aggregator</name>
+    <!-- 同name -->
+    <!-- 继承 -->
+    <description>Demo Aggregator</description>
+    <!-- 子服务首页 , 若无 , 为项目首页 -->
+    <!-- 继承 -->
+    <url>https://demo.zhuyupeng.com</url>
+    <!-- 继承 -->
+    <licenses>
+        <license>
+            <name>"Anti 996" License Version 1.0</name>
+            <url>https://github.com/996icu/996.ICU/blob/master/LICENSE</url>
+        </license>
+    </licenses>
+    <!-- 继承 -->
+    <developers>
+        <developer>
+            <name>Zhu Yupeng</name>
+            <email>tawoli@icloud.com</email>
+        </developer>
+    </developers>
+    <!-- 继承 -->
+    <scm>
+        <url>https://github.com/tawoli/java-demo</url>
+    </scm>
+
+    <properties>
+        <hutool.version>5.4.5</hutool.version>
+        <knife4j.version>3.0.1</knife4j.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.zhuyupeng.demo</groupId>
+                <artifactId>demo-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zhuyupeng.demo</groupId>
+                <artifactId>demo-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- hutool -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- knife4j -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
